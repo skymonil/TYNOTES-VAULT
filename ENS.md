@@ -1065,3 +1065,20 @@ vPC is a feature primarily found on Cisco Nexus data center switches. It allows 
 
 - **How it Works:** Unlike VSS, the two Nexus switches remain distinct devices with separate control planes and management. They use a "Peer Link" to synchronize their state and appear as a single logical entity only to the downstream device.
 - **Key Benefit:** It provides hardware-level redundancy and loop-free topology without blocking any ports. If one Nexus switch fails, the traffic continues to flow through the second switch via the remaining link in the Port Channel with zero millisecond convergence time.
+
+---
+
+UNIT 3
+
+
+
+
+
+---
+
+
+![[IMG-20260226-135246.png]]
+
+
+
+---

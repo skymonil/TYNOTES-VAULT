@@ -1,4 +1,6 @@
 {
   "alwaysUpdateLinks": true,
-  "useMarkdownLinks": false
+  "useMarkdownLinks": false,
+  "rightToLeft": false,
+  "openBehavior": ""
 }

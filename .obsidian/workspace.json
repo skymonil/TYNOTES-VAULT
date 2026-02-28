@@ -171,10 +171,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "BIA.md"
+                "file": "SQM.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for BIA"
+              "title": "File properties for SQM"
             }
           }
         ],
@@ -194,20 +194,24 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "digitalgarden:Digital Garden Publication Center": false
+      "digitalgarden:Digital Garden Publication Center": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "82005c1044f50511",
+  "active": "8464deec2869692e",
   "lastOpenFiles": [
+    "IMG-20260228-071230.png",
+    "SMIT.md",
+    "SQM.md",
+    "IS.md",
+    "ENS.md",
+    "IMG-20260226-135246.png",
+    "BIA.md",
     "New Text Document.txt",
     "New shortcut.lnk",
-    "BIA.md",
     "TYNOTES/bia.md",
-    "SQM.md",
     "IMG-20260223-160304.png",
     "home.md",
-    "SMIT.md",
-    "IS.md",
     "TYNOTES",
     "TYNOTES/is.md",
     "Untitled.base",
@@ -229,14 +233,11 @@
     "2026-02-21.md",
     "Welcome.md",
     "ssqm.md",
-    "ENS.md",
     "BIA/image 16.png",
     "BIA/image 15.png",
     "BIA/image 14.png",
     "BIA/image 13.png",
-    "BIA/image 12.png",
     "BIA",
-    "IS",
     "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
     "SMIT 2cc405b744a580ed9f63eeb4c90b9e64.md"
   ]
