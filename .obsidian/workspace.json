@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e175310660488186",
+        "id": "7ecc8ba8c2a1d60d",
         "type": "tabs",
         "children": [
           {
-            "id": "8464deec2869692e",
+            "id": "1818cd30e93a6b70",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BIA.md",
+                "file": "2026-03-04.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BIA"
+              "title": "2026-03-04"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"cssclasses\"]",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 259.50722885131836
   },
   "right": {
     "id": "3eef6cd2640b9f5a",
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sqm.md",
+                "file": "2026-03-04.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of sqm"
+              "title": "Outline of 2026-03-04"
             }
           },
           {
@@ -171,19 +171,18 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "SQM.md"
+                "file": "2026-03-04.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for SQM"
+              "title": "File properties for 2026-03-04"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,16 +197,21 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "8464deec2869692e",
+  "active": "1818cd30e93a6b70",
   "lastOpenFiles": [
-    "BIA.md",
     "ENS.md",
+    "2026-03-04.md",
+    "IS.md",
+    "SMIT.md",
+    "SQM.md",
+    "BIA.md",
+    "Concepts/KPI.md",
+    "Concepts/Untitled",
+    "Concepts",
+    "IMG-20260303-191026.png",
     "IMG-20260302-195537.png",
     "TYNOTES/bia.md",
-    "SQM.md",
     "IMG-20260228-071230.png",
-    "SMIT.md",
-    "IS.md",
     "IMG-20260226-135246.png",
     "New Text Document.txt",
     "New shortcut.lnk",
@@ -220,7 +224,6 @@
     "Untitled 2.base",
     "Untitled 3.base",
     "Untitled 4.base",
-    "Untitled 5.base",
     "Pasted image 20260216133128.png",
     "TYNOTES/smit.md",
     "TYNOTES/sqm.md",
@@ -235,8 +238,6 @@
     "Welcome.md",
     "ssqm.md",
     "BIA/image 16.png",
-    "BIA/image 15.png",
-    "BIA",
     "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
     "SMIT 2cc405b744a580ed9f63eeb4c90b9e64.md"
   ]
