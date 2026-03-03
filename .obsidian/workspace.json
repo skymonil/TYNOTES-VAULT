@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQM.md",
+                "file": "BIA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQM"
+              "title": "BIA"
             }
           }
         ]
@@ -200,16 +200,17 @@
   },
   "active": "8464deec2869692e",
   "lastOpenFiles": [
+    "BIA.md",
+    "ENS.md",
+    "IMG-20260302-195537.png",
+    "TYNOTES/bia.md",
+    "SQM.md",
     "IMG-20260228-071230.png",
     "SMIT.md",
-    "SQM.md",
     "IS.md",
-    "ENS.md",
     "IMG-20260226-135246.png",
-    "BIA.md",
     "New Text Document.txt",
     "New shortcut.lnk",
-    "TYNOTES/bia.md",
     "IMG-20260223-160304.png",
     "home.md",
     "TYNOTES",
@@ -235,8 +236,6 @@
     "ssqm.md",
     "BIA/image 16.png",
     "BIA/image 15.png",
-    "BIA/image 14.png",
-    "BIA/image 13.png",
     "BIA",
     "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
     "SMIT 2cc405b744a580ed9f63eeb4c90b9e64.md"
