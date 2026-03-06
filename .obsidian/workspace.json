@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IS.md",
+                "file": "BIA.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "IS"
+              "title": "BIA"
             }
           }
         ]
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IS.md",
+                "file": "BIA.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": ""
+                "searchQuery": "levels of"
               },
               "icon": "lucide-list",
-              "title": "Outline of IS"
+              "title": "Outline of BIA"
             }
           },
           {
@@ -200,15 +200,19 @@
   },
   "active": "a78ac2e7807e89ce",
   "lastOpenFiles": [
+    "ENS.md",
+    "IMG-20260306-184506.png",
+    "IMG-20260306-184458.png",
+    "IMG-20260306-184444.png",
+    "IS.md",
+    "home.md",
+    "SQM.md",
     "BIA.md",
     "Concepts/KPI.md",
     "2026-02-21.md",
     "2026-02-22.md",
     "2026-03-04.md",
-    "ENS.md",
-    "IS.md",
     "SMIT.md",
-    "SQM.md",
     "Concepts/Untitled",
     "Concepts",
     "IMG-20260303-191026.png",
@@ -219,7 +223,6 @@
     "New Text Document.txt",
     "New shortcut.lnk",
     "IMG-20260223-160304.png",
-    "home.md",
     "TYNOTES",
     "TYNOTES/is.md",
     "Untitled.base",
@@ -233,12 +236,9 @@
     "TYNOTES/sqm 2.md",
     "TYNOTES/sqm 1.md",
     "IMG-20260222-073450.png",
-    "BIA/image.png",
     "![[IMG-20260222-070412.png.md",
-    "IMG-20260222-070412.png",
     "Welcome.md",
     "ssqm.md",
-    "BIA/image 16.png",
     "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
     "SMIT 2cc405b744a580ed9f63eeb4c90b9e64.md"
   ]
