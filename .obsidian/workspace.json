@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "BIA.md",
+                "file": "SQM.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "BIA"
+              "title": "SQM"
             }
           }
         ]
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
+                "file": "BIA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from SQM 2c3405b744a58062b9f1d3ff75232f97"
+              "title": "Outgoing links from BIA"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BIA.md",
+                "file": "SQM.md",
                 "followCursor": false,
                 "showSearch": true,
-                "searchQuery": "levels of"
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of BIA"
+              "title": "Outline of SQM"
             }
           },
           {
@@ -172,14 +172,14 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "IS.md"
+                "file": "SQM.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for IS"
+              "title": "File properties for SQM"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -200,14 +200,16 @@
   },
   "active": "a78ac2e7807e89ce",
   "lastOpenFiles": [
+    "IMG-20260308-085430.png",
+    "BIA.md",
+    "IMG-20260307-204202.png",
+    "SQM.md",
+    "IS.md",
     "ENS.md",
     "IMG-20260306-184506.png",
     "IMG-20260306-184458.png",
     "IMG-20260306-184444.png",
-    "IS.md",
     "home.md",
-    "SQM.md",
-    "BIA.md",
     "Concepts/KPI.md",
     "2026-02-21.md",
     "2026-02-22.md",
@@ -235,7 +237,6 @@
     "TYNOTES/sqm.md",
     "TYNOTES/sqm 2.md",
     "TYNOTES/sqm 1.md",
-    "IMG-20260222-073450.png",
     "![[IMG-20260222-070412.png.md",
     "Welcome.md",
     "ssqm.md",
