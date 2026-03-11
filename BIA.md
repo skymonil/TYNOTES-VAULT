@@ -2400,7 +2400,13 @@ Here is a breakdown of how a modern RMS functions:
 ### 2. Dynamic Pricing (The Algorithm)
 
 - **What it does:** Based on the forecast, the RMS automatically calculates the optimal price for a product at any given second. If demand suddenly spikes, the system automatically raises the price to capture higher margins.
+
+ **Real-Time Calibration:** The RMS constantly compares the _actual_ real-time sales against the _forecasted_ sales.
     
+    - If a hotel is filling up faster than the forecast predicted, the RMS automatically raises the price of the remaining rooms to capture the high demand (maximizing profit margins).
+        
+    - If the hotel is booking slower than expected, the RMS lowers the price to stimulate demand and ensure the rooms do not sit empty (minimizing lost revenue).
+
 - **The Goal:** To avoid leaving money on the table. If 100 people are willing to pay $500 for a hotel room, the RMS ensures the room isn't accidentally sold for $200.
     
 
@@ -2525,8 +2531,7 @@ Instead, the RMS relies on modern distributed systems. Seat availability and pri
 
 ---
 
-## 10. Explain the concepts of Capacity management and Yield management
-with respect to the Revenue Management System.
+## 10. Explain the concepts of Capacity management and Yield management with respect to the Revenue Management System.
 
 In any Revenue Management System (RMS), a business is constantly trying to solve a specific puzzle: how to make the absolute most money possible when they have a fixed, perishable amount of inventory to sell (like seats on a flight, rooms in a hotel, or advertising space on a website).
 

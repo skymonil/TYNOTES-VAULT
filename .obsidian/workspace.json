@@ -1,0 +1,262 @@
+{
+  "main": {
+    "id": "02bec83eefb27a38",
+    "type": "split",
+    "children": [
+      {
+        "id": "0f5f18908d26c8a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f480fa2ee3b2e310",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BIA.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "BIA"
+            }
+          },
+          {
+            "id": "81430c011eed432d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "IS.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "IS"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7d8e02628178a59d",
+    "type": "split",
+    "children": [
+      {
+        "id": "570b9efae3e8a164",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "82005c1044f50511",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "76b603787dbd9f9e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "90b5bb03157863bf",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 259.50722885131836
+  },
+  "right": {
+    "id": "3eef6cd2640b9f5a",
+    "type": "split",
+    "children": [
+      {
+        "id": "30f7bf77d04e0c50",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "20fb16f146093020",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SQM 2c3405b744a58062b9f1d3ff75232f97"
+            }
+          },
+          {
+            "id": "5cce1eeaa7e12b27",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "BIA.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from BIA"
+            }
+          },
+          {
+            "id": "12c770b00a438615",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "338e0d29653b2846",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4f0535bd4572481c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SQM.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of SQM"
+            }
+          },
+          {
+            "id": "a1fc19681cb8b21b",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "IS.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for IS"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 299.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "digitalgarden:Digital Garden Publication Center": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "81430c011eed432d",
+  "lastOpenFiles": [
+    "BIA.md",
+    "IMG-20260310-193304.png",
+    "SQM.md",
+    "Untitled 3.base",
+    "Untitled 2.base",
+    "IMG-20260306-184458.png",
+    "Untitled 1.base",
+    "IMG-20260303-191026.png",
+    "IMG-20260308-085430.png",
+    "IMG-20260307-204202.png",
+    "IS.md",
+    "ENS.md",
+    "IMG-20260306-184506.png",
+    "IMG-20260306-184444.png",
+    "home.md",
+    "Concepts/KPI.md",
+    "2026-02-21.md",
+    "2026-02-22.md",
+    "2026-03-04.md",
+    "SMIT.md",
+    "Concepts/Untitled",
+    "Concepts",
+    "IMG-20260302-195537.png",
+    "TYNOTES/bia.md",
+    "IMG-20260228-071230.png",
+    "IMG-20260226-135246.png",
+    "New Text Document.txt",
+    "New shortcut.lnk",
+    "TYNOTES",
+    "TYNOTES/is.md",
+    "Untitled.base",
+    "Untitled 4.base",
+    "TYNOTES/smit.md",
+    "TYNOTES/sqm.md",
+    "TYNOTES/sqm 2.md",
+    "TYNOTES/sqm 1.md",
+    "![[IMG-20260222-070412.png.md",
+    "Welcome.md",
+    "ssqm.md",
+    "SQM 2c3405b744a58062b9f1d3ff75232f97.md",
+    "SMIT 2cc405b744a580ed9f63eeb4c90b9e64.md"
+  ]
+}
