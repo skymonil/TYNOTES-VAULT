@@ -332,6 +332,12 @@ Continuous monitoring, penetration testing, and red-team exercises help uncover 
 
 ## 10.Lifecycle of Malicious Mobile Code
 
+In Information Security, **Malicious Mobile Code** is a specific category of malware.
+
+Before defining the "malicious" part, it is crucial to clear up the most common misconception: **"Mobile code" has absolutely nothing to do with mobile phones or tablets.** Instead, "mobile code" refers to lightweight software scripts or programs that are transmitted across a network (like the internet) from a remote server and then downloaded and executed automatically on a local machine with little to no human intervention.
+
+When that code is intentionally designed to damage the system, steal data, or open a backdoor, it becomes **Malicious Mobile Code**.
+
 ### **1️⃣ Find**
 
 In this stage, the attacker or malicious code **searches for vulnerable systems**. This may involve scanning networks, identifying unpatched software, weak security settings, or unsuspecting users. The goal is to locate a target that can be compromised.
@@ -489,6 +495,40 @@ Common objectives of network layer attacks include:
 - Identity spoofing
 
 Examples of network layer attacks include **IP spoofing, packet sniffing, route poisoning, ICMP flooding, and man-in-the-middle attacks**.
+
+Types on NLA
+
+### 1. IP Spoofing
+
+- **What it is:** The attacker creates IP packets but modifies the "Source IP" header to make it look like the packet is coming from a different, trusted computer.
+    
+- **How it works:** Imagine sending a physical letter but writing your neighbor's return address on the envelope. When the receiving server gets the packet, it thinks it is communicating with a trusted internal machine and might grant access to restricted resources.
+    
+- **The Goal:** To bypass IP-based firewalls and authentication systems, or to hide the attacker's true identity during a larger cyberattack.
+    
+
+### 2. ICMP Floods (Smurf Attack)
+
+- **What it is:** A massive Distributed Denial of Service (DDoS) attack that overwhelms a victim's network with "ping" requests.
+    
+- **How it works:** The attacker uses IP Spoofing to change their source IP to the victim's IP address. They then send an ICMP "Echo Request" (a ping) to a network broadcast address. The broadcast address forwards that ping to _every single device_ on that network. All of those devices immediately reply to the ping at the exact same time, sending their responses directly to the spoofed victim's IP address, instantly overwhelming and crashing the victim's server.
+    
+- **The Goal:** To completely take a server or network offline by exhausting its bandwidth.
+### 3. IP Fragmentation Attacks (Teardrop Attack)
+
+- **What it is:** An attack that exploits how the Network Layer breaks down and reassembles large packets of data.
+    
+- **How it works:** When a data packet is too large to travel across a network, Layer 3 fragments it into smaller pieces. Each piece is given an offset value so the receiving computer knows how to stitch them back together in the correct order. In a Teardrop attack, the hacker intentionally sends fragments with overlapping, mathematically impossible offset values. When the victim's operating system tries to reassemble them, it gets confused, panics, and crashes.
+    
+- **The Goal:** To crash the target's operating system (Denial of Service).
+
+### 5. Ping of Death
+
+- **What it is:** A legacy attack that sends a malformed or intentionally oversized ping packet.
+    
+- **How it works:** The maximum legal size of an IP packet is 65,535 bytes. An attacker fragments an ICMP packet so that when the target machine reassembles it, the total size exceeds that 65,535-byte limit. Older operating systems did not know how to handle this buffer overflow and would instantly freeze or reboot. (Most modern systems are patched against this, but it remains a foundational concept in InfoSec).
+    
+- **The Goal:** To crash the target machine.
 
 ---
 
