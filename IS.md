@@ -252,8 +252,6 @@ Maintenance ensures the long-term effectiveness of the security program. **Polic
 
 ---
 
----
-
 ## 6.Justification: Why the Defender’s Job Is Harder Than the Attacker’s
 
 The attacker needs to exploit only one weakness in a system to succeed, whereas the defender must attempt to protect against all possible vulnerabilities. Since no system can be perfectly secure, achieving complete protection is practically impossible.
@@ -1472,6 +1470,58 @@ The text uses a **Web-based Bookstore** (like Amazon) to illustrate this concept
     - **Staff:** The application recognizes their internal credentials and grants them the ability to modify book costs and prices.
 3. **The Database View:** Throughout all these different interactions, the **Database Server** only ever sees one login: the **Web Server account**. It doesn't know about the individual customers or staff members; it simply fulfills the queries sent by the bookstore application.
 
+Here are the primary limitations of relying solely on Application-Level Security:
+
+### 1. The "Single Point of Failure" (One Key to the Kingdom)
+
+Since the application uses a single powerful login (service account), a single vulnerability like **SQL Injection** or a **Remote Code Execution (RCE)** exploit gives an attacker the same level of access as the application itself.
+
+- **The Risk:** If the app can delete all users, an attacker who compromises the app can delete all users. There is no second layer of defense at the database level to say "No, this specific request shouldn't be allowed."
+    
+
+### 2. "Forgotten WHERE Clause" (Developer Error)
+
+In this model, security is **explicitly** enforced by the developer in every single query.
+
+- **The Risk:** If a developer writes `SELECT * FROM orders` but forgets the `WHERE user_id = ?` filter, the application will leak every order in the database to the current user. This is a very common cause of **Broken Object Level Authorization (BOLA)**, a top OWASP security risk.
+    
+
+### 3. Lack of Audit Visibility
+
+Because the database sees only one user (the application service account), the database logs are effectively useless for forensic investigation.
+
+- **The Risk:** If data is stolen, the database logs will show that the `app_user` accessed the data at 2:00 AM. It won't tell you **which** end-user (e.g., `monil@example.com`) was responsible. You have to hope your application-level logs are perfect to reconstruct the timeline.
+    
+
+### 4. Over-Privileged Ad-Hoc Access
+
+Developers, DBAs, and reporting tools (like Metabase or Tableau) often connect to the database using the same high-level credentials.
+
+- **The Risk:** A junior developer running an ad-hoc query to "check some data" could accidentally run a `DELETE` or `UPDATE` on the entire production table because the database doesn't restrict their specific connection to "Read-Only" or "Own-Rows-Only."
+    
+
+### 5. Bypass via Direct Access
+
+Application-level rules only exist inside the code.
+
+- **The Risk:** If an attacker finds an alternative path to the database (e.g., an exposed port, a leaked backup file, or an unpatched management tool like pgAdmin), your application-level security rules simply **do not exist** to stop them.
+
+### **Comparison: Application vs. Database Security**
+
+|**Feature**|**Application Security (One Login)**|**Database Security (Granular/RLS)**|
+|---|---|---|
+|**Trust Model**|The DB trusts the Application server completely.|The DB trusts only the individual authenticated user.|
+|**DB Connection**|Uses a **Connection Pool** with one service account.|Often involves **Impersonation** or individual logins.|
+|**Logic Location**|Enforced in code (e.g., `WHERE user_id = ?`).|Enforced in schema (e.g., **Row Level Security**).|
+|**Data Access**|App code must filter data; risk of "forgetting a WHERE clause."|DB automatically filters data; unauthorized rows aren't even returned.|
+|**Ad-hoc Access**|A developer with the DB credentials can see **everything**.|Even with DB access, a user only sees their own authorized rows.|
+|**Complexity**|Easier for developers to write and manage.|Higher complexity in DB schema and user management.|
+|**Performance**|High (connection pooling is efficient).|Potential overhead due to per-query policy evaluation.|
+|**Consistency**|Risk of "leaks" if multiple apps use the same DB differently.|Guaranteed consistency across all apps/tools using the DB.|
+
+---
+
+### **Which one should you choose?**
 ---
 
 ## 12.Database Backup and Recovery
