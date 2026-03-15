@@ -10,7 +10,7 @@ dg-publish: true
 
 
 # UNIT 1
-## 1.Define IT Service Management (ITSM). Explain how ITSM enables value creation using an example of an Indian food delivery platform like Zomatoss
+## 1.Define IT Service Management (ITSM). Explain how ITSM enables value creation using an example of an Indian food delivery platform like Zomatos
 
 ## **Definition of IT Service Management (ITSM)**
 
@@ -143,8 +143,7 @@ Through ITSM **Incident Management**, these teams coordinate their efforts, shar
 
 ---
 
-## 3.Describe the Agency Principle in ITSM with an example of TCS
-providing services to SBI Bank.
+## 3.Describe the Agency Principle in ITSM with an example of TCS providing services to SBI Bank.
 
 ## **Agency Principle in IT Service Management (ITSM)**
 
