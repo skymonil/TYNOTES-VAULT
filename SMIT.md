@@ -730,6 +730,46 @@ A **Type III service provider** delivers IT services to **external customers** i
 
 ---
 
+13. Explain Risks in Service Strategy
+Here are the major risks associated with the Service Strategy phase of the IT lifecycle:
+
+**1. Misalignment with Business Goals**
+
+Developing an IT strategy that sounds technically impressive but fails to support the actual operational needs and long-term vision of the broader organization, rendering the services useless to the customer.
+
+**2. Financial Mismanagement**
+
+Failing to accurately forecast the costs and return on investment for new services, which can lead to severe budget overruns or the cancellation of critical IT projects before they deliver value.
+
+**3. Poor Portfolio Decisions**
+
+Investing heavily in the wrong IT services while failing to retire outdated, legacy systems, resulting in a bloated service catalog that drains engineering resources and confuses the end-user.
+
+**4. Inaccurate Demand Forecasting**
+
+Misunderstanding how and when customers will actually use a service, leading to either massively overspending on unnecessary IT capacity or suffering performance crashes during peak usage times.
+
+**5. Ignoring Governance and Compliance**
+
+Designing a high-level strategy that completely overlooks industry regulations or legal data privacy requirements, exposing the business to massive financial penalties once those services are eventually built and launched.
+
+**Would you like me to explain how the "Service Portfolio Management" process acts as a direct safeguard against investing in the wrong strategic services?**
+
+
+CSFs in Service Strategy
+
+**1. Business Alignment** A primary success factor is ensuring that every proposed IT service directly supports and advances the overarching goals of the broader organization rather than functioning as an isolated technical experiment.
+
+**2. Financial Viability** IT leadership must be able to accurately forecast total operational costs and clearly prove the expected Return on Investment to justify the budget for any new service.
+
+**3. Portfolio Optimization** The organization must successfully maintain a balanced mix of pipeline, active, and retired services, ensuring the IT department delivers maximum business value without wasting resources on outdated systems.
+
+**4. Demand Forecasting** A critical factor is correctly predicting customer usage patterns and seasonal business cycles to ensure IT provides the exact capacity needed without massively overspending on idle infrastructure.
+
+**5. Value Articulation** The strategy must explicitly define both the utility (fitness for purpose) and warranty (fitness for use) of a service so that end-users clearly understand the exact benefits it will deliver.
+
+---
+
 # UNIT 2
 
 
