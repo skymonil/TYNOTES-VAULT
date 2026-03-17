@@ -1,3 +1,6 @@
+---
+dg-publish: "true"
+---
 # ENS
 
 # UNIT 1
@@ -18,7 +21,7 @@ In essence, PPDIOO is the methodology that defines the structured steps and deli
 
 ---
 
-1.PBM Network lifecycle
+1.PBM Network lifecycle QB
 
 The PBM model is a high-level, general framework for IT service management and operations. It describes the three essential phases of any major IT project or system.
 
@@ -51,7 +54,7 @@ The **Manage** phase covers the entire operational life of the network after dep
 
 ---
 
-2.PPDIOO 
+2.PPDIOO  QB
 
 The PPDIOO (Prepare, Plan, Design, Implement, Operate, Optimize) Lifecycle is Cisco's comprehensive, structured methodology for designing, implementing, and managing network and infrastructure services. It provides a roadmap for engineers to ensure that network solutions meet business requirements and operate optimally throughout their entire lifespan.
 
@@ -133,7 +136,7 @@ The Optimize phase is the continuous feedback mechanism that ensures the network
 
 ---
 
-DESIGN METHODOLOGY for PBM
+DESIGN METHODOLOGY for PBM QB
 
 3.STEPS OF IDENTIFY CUSTOMER REQUIREMENTS
 
@@ -165,7 +168,7 @@ Technical goals translate business requirements into **measurable network object
 
 Technical constraints are **limitations imposed by existing technology or infrastructure**. These may include legacy hardware, outdated cabling, limited IP address space, compatibility issues, or lack of support for modern protocols. For example, an existing network may rely on older switches that do not support advanced security or QoS features. Recognizing these constraints allows designers to decide whether to work within existing limitations or propose upgrades. This step ensures the final network design is technically feasible and cost-effective.
 
-2.  CHARACTERIZING THE EXISTING NETWORK
+2.  CHARACTERIZING THE EXISTING NETWORK QB
 
  4.Steps involved in gathering information about an existing network
 
@@ -271,7 +274,7 @@ a **Pilot Test** is conducted by deploying the new solution to an **actual produ
 
 ![image.png](ENS/image.png)
 
-8.Architecture of Hierarchial netwrok model
+8.Architecture of Hierarchial netwrok model QB IMP
 
 Hierarchical Network Model
 The Hierarchical Network Model is a Cisco-recommended design framework that divides a network into three logical layers: Access, Distribution, and Core. This layered approach simplifies network design, improves scalability, enhances performance, and makes troubleshooting easier by assigning specific roles to each layer.
@@ -293,7 +296,160 @@ At the core layer, the focus is on high-speed switching, low latency, high avail
 
 ---
 
-# UNIT  2
+Explain why hierarchical models outperform flat network designs.  QB
+
+In computer networking, a **flat network design** is essentially plugging every device, printer, and server into one massive, interconnected web of switches. While this works fine for a small office with 10 computers, it completely falls apart at an enterprise scale.
+
+A **hierarchical network design** (like the Cisco 3-Tier model) divides the network into discrete, logical layers based on their specific function. This structured approach massively outperforms a flat design for five primary reasons:
+
+### 1. Broadcast Containment (Performance)
+
+- **The Flat Problem:** In a flat network, every device sits in the same "broadcast domain." If a single computer sends out an ARP request to find a printer, that message is blasted to every single device on the entire network, consuming bandwidth and CPU cycles everywhere. If a network loop occurs, it causes a "broadcast storm" that melts the entire network.
+    
+- **The Hierarchical Solution:** Hierarchical models use routers or Layer 3 switches at specific tiers (usually the Distribution layer) to act as walls. These walls break the network into smaller, isolated broadcast domains. A broadcast sent by a PC in the HR department stays in the HR department, keeping the rest of the network running at lightning speed.
+    
+
+### 2. Predictable Scalability
+
+- **The Flat Problem:** Growing a flat network usually means randomly daisy-chaining a new switch to an old switch. Eventually, the data path becomes so long and tangled that data takes too long to cross the building, causing timeouts.
+    
+- **The Hierarchical Solution:** Hierarchical networks are modular. If you build a new warehouse, you don't have to redesign the network; you simply drop a new "Access block" into the building and plug it straight into the existing "Distribution block." The network grows predictably without degrading performance.
+    
+
+### 3. Faster Troubleshooting and Fault Isolation
+
+- **The Flat Problem:** When the network goes down in a flat design, finding the root cause is like finding a needle in a haystack. Because everything is directly connected to everything else, a faulty switch in the basement can cause random outages on the 4th floor.
+    
+- **The Hierarchical Solution:** Because functions are strictly separated, IT teams can isolate problems instantly. If an entire floor loses internet, the engineer knows exactly which Distribution switch serves that floor and can ignore the rest of the campus.
+    
+
+### 4. Enhanced Security and Policy Enforcement
+
+- **The Flat Problem:** Security in a flat network is a nightmare. Because there are no internal borders, if a hacker compromises a receptionist's PC, they have a straight, unobstructed path to the main database server.
+    
+- **The Hierarchical Solution:** A hierarchical model creates natural "choke points." Network administrators can easily apply Access Control Lists (ACLs) at the Distribution layer, creating a strict rule that says, "Computers in the Guest Wi-Fi subnet are mathematically forbidden from talking to the internal Database subnet."
+    
+
+### 5. High Availability and Redundancy
+
+- **The Flat Problem:** Trying to build backup links in a flat network is messy and often triggers spanning-tree protocol (STP) errors, which block traffic to prevent loops.
+    
+- **The Hierarchical Solution:** The hierarchical model is designed specifically for redundancy. You can easily connect every Access switch to two separate Distribution switches. If one Distribution switch physically catches fire, the traffic automatically and instantly reroutes through the second switch, resulting in zero downtime for the users.
+    
+
+---
+
+Explain the Enterprise Campus Modules QB/ PYQ
+
+In the Cisco Enterprise Architecture, the **Enterprise Campus Module** represents the internal network infrastructure for a specific physical location, like a large corporate headquarters or a university campus. It is designed to provide highly available, scalable, and secure access to internal resources.
+
+To prevent the network from becoming a tangled, unmanageable web of cables, the campus is broken down into four distinct sub-modules to keep traffic flowing efficiently:
+
+### 1. Building Access (The Edge)
+
+- **What it is:** This is the physical layer where end-users and their devices actually plug into the network. It consists of the switches sitting in the wiring closets on every individual floor of a building.
+    
+- **The Function:** The primary job of the Access layer is to provide network entry to PCs, IP phones, Wi-Fi access points, and printers. It handles low-level tasks like assigning devices to specific VLANs (Virtual LANs), providing Power over Ethernet (PoE) to cameras and phones, and enforcing basic port security (like shutting down a wall port if an unauthorized laptop is plugged in).
+    
+
+### 2. Building Distribution and Aggregation (The Middleman)
+
+- **What it is:** The layer that connects all the dozens of Building Access switches together. If the Access layer is the local driveway, the Distribution layer is the neighborhood intersection.
+    
+- **The Function:** This is the "smart" layer of the campus. It acts as the strict boundary between Layer 2 (switching) and Layer 3 (routing). Its main job is to aggregate all the traffic from the floors below, route that traffic to other parts of the building, and enforce security policies using Access Control Lists (ACLs). It is also responsible for stopping broadcast storms, ensuring that a noisy PC on Floor 1 doesn't slow down the computers on Floor 4.
+    
+
+### 3. Campus Core (The Backbone)
+
+- **What it is:** The ultra-fast, high-capacity center of the entire campus network. It connects all the different Building Distribution switches together.
+    
+- **The Function:** The Core layer has one job and one job only: move massive amounts of data as fast as physically possible. It does not do any security filtering, ACLs, or complex routing decisions, because analyzing traffic at this layer would slow down the packets. It relies on specialized, extremely high-throughput hardware to ensure that traffic flowing from Building A to Building B experiences zero latency.
+    
+
+### 4. Server Farm / Data Center (The Brains)
+
+- **What it is:** A highly secure, climate-controlled segment of the campus that houses the organization's internal servers, databases, and enterprise applications.
+    
+- **The Function:** Instead of putting a database server on a random floor in a standard building, all critical servers are aggregated into this centralized module. It is connected directly to the Campus Core using redundant, massive-capacity links (like 40Gbps or 100Gbps fiber). The network architecture here is optimized specifically to handle thousands of internal employees querying databases or downloading files simultaneously without bottlenecking.
+    
+
+---
+
+High Availability Network Services QB/PYQ
+
+In enterprise networking, these terms all revolve around how devices find each other, how they route traffic, and how they ensure the network stays online if a piece of hardware dies.
+
+To make them easier to digest, I have grouped them logically by their function.
+
+### 1. Connecting to the Network
+
+These concepts govern how an individual device (like a PC) figures out how to talk to the rest of the network.
+
+- **ARP (Address Resolution Protocol):** * **What it does:** It translates a Layer 3 IP Address (which is logical) into a Layer 2 MAC Address (which is physical).
+    
+    - **How it works:** When a computer wants to send data to an IP address on its local network but doesn't know the physical hardware address of the destination, it shouts an ARP request to everyone: _"Who has IP 192.168.1.5? Tell 192.168.1.10!"_ The target device replies with its MAC address, allowing the data to be physically delivered across the switch.
+        
+- **Explicit Configuration:**
+    
+    - **What it does:** This is the manual, static assignment of network settings by an administrator.
+        
+    - **How it works:** Instead of a computer automatically asking the network for an IP address and a default gateway (via DHCP), the IT engineer types the IP, Subnet Mask, and Gateway directly into the operating system. It is rigid, does not scale well, but is heavily used for servers and printers that must never change their IP.
+        
+- **ICMP Router Discovery Protocol (IRDP):**
+    
+    - **What it does:** A legacy protocol that allows hosts to automatically discover the IP addresses of operational routers on their subnet.
+        
+    - **How it works:** Instead of explicitly configuring a default gateway on a PC, the PC listens for "Router Advertisement" messages broadcasted by the routers. It is largely obsolete today, as DHCP handles this job much more efficiently.
+        
+
+### 2. Routing the Traffic
+
+- **RIP (Routing Information Protocol):**
+    
+    - **What it does:** One of the oldest Layer 3 routing protocols, used by routers to share their network maps with each other.
+        
+    - **How it works:** It is a "Distance-Vector" protocol. It determines the best path to a destination based strictly on "hop count" (how many routers the data must pass through). Its maximum limit is 15 hops; if a network is 16 hops away, RIP considers it unreachable. Because it is slow and lacks modern features, it is rarely used in modern enterprise networks, having been replaced by OSPF or EIGRP.
+        
+
+### 3. First Hop Redundancy Protocols (FHRP)
+
+If a campus network relies on a single router as the default gateway, and that router dies, the entire campus loses internet access. These three protocols solve that by grouping multiple physical routers into one "Virtual Router."
+
+- **HSRP (Hot Standby Router Protocol):**
+    
+    - **What it does:** A Cisco-proprietary redundancy protocol.
+        
+    - **How it works:** You configure two physical Cisco routers to share a single, virtual IP address (the default gateway for the PCs). One router is elected "Active" and handles all the traffic. The second router is "Standby" and just listens. If the Active router catches fire, the Standby instantly takes over the virtual IP, and the users never notice a disruption.
+        
+- **VRRP (Virtual Router Redundancy Protocol):**
+    
+    - **What it does:** The exact same thing as HSRP, but it is an **Open Standard** (IEEE).
+        
+    - **How it works:** Because it is not owned by Cisco, you can use VRRP to create a highly available gateway using a mix of different hardware, like one Juniper router and one Arista router. It uses a "Master/Backup" relationship instead of Active/Standby.
+        
+- **GLBP (Gateway Load Balancing Protocol):**
+    
+    - **What it does:** A Cisco-proprietary protocol that provides both redundancy _and_ active load balancing.
+        
+    - **How it works:** In HSRP and VRRP, the backup router sits completely idle, which is a waste of expensive hardware. GLBP solves this by actively using all the routers in the group at the same time. It assigns the same virtual IP to the group, but hands out different virtual MAC addresses to the PCs, naturally splitting the traffic load across up to four physical routers simultaneously.
+        
+
+### 4. Hardware Virtualization
+
+- **VSS (Virtual Switching System):**
+    
+    - **What it does:** A Cisco technology that fuses two massive physical switches (usually in the Campus Core or Distribution layer) into a single logical switch.
+        
+    - **How it works:** Normally, if you connect switches together with multiple cables, the Spanning Tree Protocol (STP) blocks half the cables to prevent a network loop, wasting half your bandwidth. VSS merges the two switches so they share a single control plane (one brain). Because the network thinks they are just one big switch, STP doesn't block any ports, allowing you to use 100% of your bandwidth while maintaining total hardware redundancy.
+        
+
+---
+
+**Next Step:** Since HSRP, VRRP, and GLBP are critical for keeping the network online during a hardware failure, would you like me to explain the concept of **Preemption** and why network engineers must be very careful when enabling it on these backup routers?
+
+---
+
+# UNIT 2
 
 
 ## 1.List and explain common LAN media types for campus access.
@@ -2241,6 +2397,341 @@ These are the most fundamental records in DNS. They directly map a human-readabl
     - _How it works:_ Instead of asking "What is the IP for `example.com`?", a PTR record answers the question, "Which domain name belongs to the IP `192.0.2.1`?" This is frequently used by anti-spam filters to verify the identity of a server sending traffic.
         
 
+
+
+                           OR
+
+The **DNS to IP resolution process** is how the internet converts a **human-readable domain name** (like `www.youtube.com`) into an **IP address** that computers use to communicate.
+
+Let’s walk through the **full process step-by-step** when a user types:
+
+```
+www.youtube.com
+```
+
+in their browser.
+
+---
+
+# Step 1 — User Enters the URL
+
+The user types:
+
+```
+https://www.youtube.com
+```
+
+in the browser.
+
+The browser needs the **IP address** of `www.youtube.com` to connect to the server.
+
+Example IP:
+
+```
+142.250.183.206
+```
+
+But first it must **resolve the domain using DNS**.
+
+---
+
+# Step 2 — Browser Cache Check
+
+The browser first checks its **DNS cache**.
+
+Example entry:
+
+```
+www.youtube.com → 142.250.183.206
+```
+
+If the entry exists and **TTL (Time To Live)** has not expired:
+
+➡ the browser immediately uses that IP.
+
+If not:
+
+➡ the browser moves to the next step.
+
+---
+
+# Step 3 — OS DNS Cache
+
+The browser asks the **operating system resolver**.
+
+The OS checks its local DNS cache.
+
+Example command (Linux):
+
+```bash
+cat /etc/hosts
+```
+
+or cached entries stored by the OS.
+
+If the OS knows the IP:
+
+```
+www.youtube.com → 142.250.183.206
+```
+
+resolution stops here.
+
+If not:
+
+➡ query goes to the **configured DNS resolver**.
+
+---
+
+# Step 4 — Query to Recursive DNS Resolver
+
+The OS sends the query to a **recursive DNS server**.
+
+Usually provided by:
+
+- ISP DNS
+    
+- Google DNS `8.8.8.8`
+    
+- Cloudflare DNS `1.1.1.1`
+    
+
+Query sent:
+
+```
+What is the IP for www.youtube.com?
+```
+
+If the resolver has the answer cached:
+
+```
+www.youtube.com → 142.250.183.206
+```
+
+it returns immediately.
+
+If not, the resolver performs a **recursive lookup**.
+
+---
+
+# Step 5 — Query to Root DNS Servers
+
+The resolver asks a **Root DNS server**.
+
+Root servers are the top level of the DNS hierarchy.
+
+Example root servers:
+
+```
+a.root-servers.net
+b.root-servers.net
+```
+
+Query:
+
+```
+Where can I find .com domain information?
+```
+
+Root server replies:
+
+```
+Ask the .com TLD servers
+```
+
+It returns the **address of .com TLD servers**.
+
+---
+
+# Step 6 — Query to TLD DNS Server (.com)
+
+Now the resolver asks the **.com TLD server**.
+
+Query:
+
+```
+Where can I find youtube.com?
+```
+
+The TLD server responds:
+
+```
+Ask youtube.com's authoritative nameserver
+```
+
+Example authoritative servers:
+
+```
+ns1.google.com
+ns2.google.com
+```
+
+---
+
+# Step 7 — Query to Authoritative Nameserver
+
+The resolver now queries the **authoritative DNS server** for YouTube.
+
+Query:
+
+```
+What is the IP for www.youtube.com?
+```
+
+The authoritative server responds with the **A record**:
+
+```
+www.youtube.com → 142.250.183.206
+```
+
+---
+
+# Step 8 — Resolver Returns the IP
+
+The recursive DNS server sends the IP back to:
+
+```
+User OS → Browser
+```
+
+and stores it in cache for future requests.
+
+---
+
+# Step 9 — Browser Connects to the Server
+
+Now the browser knows the IP:
+
+```
+142.250.183.206
+```
+
+It performs:
+
+1. **TCP handshake**
+    
+2. **TLS handshake** (for HTTPS)
+    
+3. Sends the HTTP request.
+    
+
+Example request:
+
+```
+GET / HTTP/1.1
+Host: www.youtube.com
+```
+
+The server responds with the **YouTube webpage**.
+
+---
+
+# DNS Resolution Hierarchy
+
+```
+User Browser
+     │
+     ▼
+Operating System Resolver
+     │
+     ▼
+Recursive DNS Server
+     │
+     ▼
+Root DNS Server
+     │
+     ▼
+TLD DNS Server (.com)
+     │
+     ▼
+Authoritative DNS Server (youtube.com)
+     │
+     ▼
+Returns IP Address
+```
+
+---
+
+# Important DNS Records
+
+Common DNS record types:
+
+|Record|Purpose|
+|---|---|
+|A|domain → IPv4 address|
+|AAAA|domain → IPv6 address|
+|CNAME|alias to another domain|
+|MX|mail servers|
+|TXT|verification records|
+
+Example:
+
+```
+www.youtube.com  →  A  → 142.250.183.206
+```
+
+---
+
+# Real-World Optimization
+
+For large services like YouTube:
+
+DNS often returns **different IPs depending on location**.
+
+Example:
+
+India user:
+
+```
+142.250.x.x
+```
+
+US user:
+
+```
+172.217.x.x
+```
+
+This allows **load balancing and CDN routing**.
+
+---
+
+# Total Time
+
+DNS resolution typically takes:
+
+```
+20–100 ms
+```
+
+because of caching at multiple layers.
+
+---
+
+✅ **Summary**
+
+1. Browser checks cache
+    
+2. OS checks cache
+    
+3. Query goes to recursive resolver
+    
+4. Resolver asks root server
+    
+5. Root directs to `.com` TLD
+    
+6. TLD directs to authoritative server
+    
+7. Authoritative server returns IP
+    
+8. Browser connects to server using that IP
+    
+
+---
+
+If you'd like, I can also show you something **very useful for DevOps interviews**:  
+**what happens _after_ DNS resolution when the browser connects to a website (the full networking flow including TCP handshake, TLS, CDN, and load balancer).** This is a very common interview question.
+
 ---
 
 ### Summary Comparison
@@ -2258,6 +2749,7 @@ These are the most fundamental records in DNS. They directly map a human-readabl
 ---
 
 ## 9.**Explain The process of subnetting
+
 Subnetting is the process of taking a single, large network and logically dividing it into multiple smaller, isolated networks (subnets).
 
 Think of it like taking a massive open-plan office building and putting up physical walls to create smaller, secure rooms for HR, Engineering, and Finance. You aren't adding more square footage to the building; you are just dividing the existing space more efficiently to improve security and reduce the noise (broadcast traffic).
@@ -2327,12 +2819,12 @@ To figure out where each of your new 4 subnets starts and ends, you need the blo
 
 Using the block size of 64, you can now write out the boundaries for your 4 brand-new subnets:
 
-|**Subnet**|**Network ID**|**First Usable IP**|**Last Usable IP**|**Broadcast IP**|
-|---|---|---|---|---|
-|**Subnet 1**|`192.168.1.0`|`192.168.1.1`|`192.168.1.62`|`192.168.1.63`|
-|**Subnet 2**|`192.168.1.64`|`192.168.1.65`|`192.168.1.126`|`192.168.1.127`|
-|**Subnet 3**|`192.168.1.128`|`192.168.1.129`|`192.168.1.190`|`192.168.1.191`|
-|**Subnet 4**|`192.168.1.192`|`192.168.1.193`|`192.168.1.254`|`192.168.1.255`|
+| **Subnet**   | **Network ID**  | **First Usable IP** | **Last Usable IP** | **Broadcast IP** |
+| ------------ | --------------- | ------------------- | ------------------ | ---------------- |
+| **Subnet 1** | `192.168.1.0`   | `192.168.1.1`       | `192.168.1.62`     | `192.168.1.63`   |
+| **Subnet 2** | `192.168.1.64`  | `192.168.1.65`      | `192.168.1.126`    | `192.168.1.127`  |
+| **Subnet 3** | `192.168.1.128` | `192.168.1.129`     | `192.168.1.190`    | `192.168.1.191`  |
+| **Subnet 4** | `192.168.1.192` | `192.168.1.193`     | `192.168.1.254`    | `192.168.1.255`  |
 
 You have successfully taken one large network of 254 hosts and chopped it into four smaller, secure networks of 62 hosts each.
 
