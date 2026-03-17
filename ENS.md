@@ -603,7 +603,6 @@ By definition, devices in VLAN 10 cannot talk to devices in VLAN 20. They are co
 
 ---
 
-**Next Step:** The method used to route traffic between these isolated VLANs has evolved significantly over the years. Would you like me to explain the difference between the legacy **"Router-on-a-Stick"** topology and modern **Layer 3 Switch (SVI)** routing?
 
 ---
 
@@ -689,16 +688,16 @@ A switch operates at **Layer 2 (Data Link Layer)** of the OSI model. Its core in
 - **Dedicated Bandwidth:** If you have a 1 Gbps switch, every port gets a dedicated 1 Gbps path, rather than sharing that speed across the entire network.
 - **Traffic Management:** Modern "Managed Switches" allow administrators to prioritize certain types of traffic (like Video or Voice) and create **VLANs** (Virtual LANs) to group devices logically.
 
-| **Feature** | **Bridge** | **Switch** |
-| --- | --- | --- |
-| **OSI Layer** | Operates at **Layer 2** (Data Link). | Operates at **Layer 2** (some also at Layer 3). |
-| **Processing** | **Software-based**: Uses the CPU to make forwarding decisions. | **Hardware-based**: Uses **ASICs** (Application Specific Integrated Circuits) for speed. |
-| **Port Density** | Low (typically **2 to 4 ports**). | High (typically **24 to 48+ ports**). |
-| **Collision Domains** | Splits a network into a few collision domains. | Provides **Micro-segmentation** (each port is its own collision domain). |
-| **Throughput** | Lower; usually handles one frame at a time. | Higher; handles **multiple simultaneous** conversations (Wire speed). |
-| **Duplex Support** | Primarily Half-Duplex. | Supports **Full-Duplex** on all ports. |
-| **Logic** | Store-and-Forward only. | Supports Store-and-Forward, **Cut-Through**, and Fragment-Free. |
-| **Network Role** | Used to connect two LAN segments. | Used to connect individual end devices (PC, Server, etc.). |
+| **Feature**           | **Bridge**                                                     | **Switch**                                                                               |
+| --------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **OSI Layer**         | Operates at **Layer 2** (Data Link).                           | Operates at **Layer 2** (some also at Layer 3).                                          |
+| **Processing**        | **Software-based**: Uses the CPU to make forwarding decisions. | **Hardware-based**: Uses **ASICs** (Application Specific Integrated Circuits) for speed. |
+| **Port Density**      | Low (typically **2 to 4 ports**).                              | High (typically **24 to 48+ ports**).                                                    |
+| **Collision Domains** | Splits a network into a few collision domains.                 | Provides **Micro-segmentation** (each port is its own collision domain).                 |
+| **Throughput**        | Lower; usually handles one frame at a time.                    | Higher; handles **multiple simultaneous** conversations (Wire speed).                    |
+| **Duplex Support**    | Primarily Half-Duplex.                                         | Supports **Full-Duplex** on all ports.                                                   |
+| **Logic**             | Store-and-Forward only.                                        | Supports Store-and-Forward, **Cut-Through**, and Fragment-Free.                          |
+| **Network Role**      | Used to connect two LAN segments.                              | Used to connect individual end devices (PC, Server, etc.).                               |
 
 ---
 
@@ -776,8 +775,10 @@ When designing a Campus LAN, engineers must look beyond simple connectivity and 
 
 - **1. Hierarchical Design (The Three-Tier Model):** Modern designs move away from "flat" networks to a modular hierarchy consisting of **Access, Distribution, and Core layers**. This makes the network easier to troubleshoot and scale.
     - *Why it matters:* It isolates failures so that a problem in one building doesn't take down the entire campus.
+    
 - **2. High Availability and Redundancy:** Critical services (like library databases or payroll) must be accessible 24/7. This involves using redundant hardware, dual-homed links (two cables for every connection), and protocols like **HSRP/VRRP** for gateway redundancy.
     - *Why it matters:* It ensures the network remains functional even if a switch or a fiber optic cable fails.
+    - 
 - **3. Scalability and Flexibility:** A campus network must be built with "tomorrow in mind." This means using modular switches that can accept more ports and choosing cabling (like Multi-mode or Single-mode fiber) that can support future speed upgrades (e.g., moving from 10Gbps to 100Gbps).
     - *Why it matters:* It prevents expensive "forklift upgrades" (replacing everything) as the organization grows.
 - **4. Security and Access Control:** Campus networks often have diverse users (students, guests, employees). Design factors include **VLAN Segmentation** to keep departments separate and **Network Access Control (NAC)** to ensure only authorized devices can connect.
@@ -786,8 +787,6 @@ When designing a Campus LAN, engineers must look beyond simple connectivity and 
     - *Why it matters:* It ensures that a large file transfer doesn't cause a high-priority video call to lag or drop.
 
 ---
-
-In modern networking, the **Cisco Three-Layer Hierarchical Model** is the gold standard for designing a Campus LAN. By breaking the network into three distinct layers, administrators can ensure the network is scalable, reliable, and easy to troubleshoot.
 
 ---
 
@@ -1021,7 +1020,9 @@ These recommendations are part of the "best practices" for Layer 2 security and 
 ### **1. Use IEEE 802.1Q instead of Cisco ISL**
 
 - **Expansion:** **802.1Q** is the industry-standard trunking protocol, whereas **ISL (Inter-Switch Link)** is an older, Cisco-proprietary method.
+
 - **The Difference:** ISL encapsulates the entire Ethernet frame, adding a 30-byte overhead. 802.1Q uses **internal tagging**, inserting a small 4-byte tag into the existing Ethernet header.
+
 - **Why it matters:** Because 802.1Q is an open standard, it allows Cisco switches to communicate with switches from other vendors (like Juniper, HP, or Dell). Since ISL is obsolete, modern Cisco hardware often doesn't even support it, making 802.1Q the only viable choice for high-speed, multi-vendor environments.
 
 ---
@@ -1029,7 +1030,9 @@ These recommendations are part of the "best practices" for Layer 2 security and 
 ### **2. Do Not Use VLAN 1 for Management**
 
 - **Expansion:** By default, every port on a Cisco switch belongs to VLAN 1, and all control traffic (like CDP, PAgP, and VTP) is sent over VLAN 1.
+
 - **The Risk:** Since every port is in VLAN 1 by default, an attacker can easily plug into any empty port and attempt to access the switch's management interface (Telnet/SSH/HTTP). This makes the switch vulnerable to "VLAN Hopping" and unauthorized access.
+
 - **The Fix:** You should create a unique, dedicated **Management VLAN** (e.g., VLAN 99) that is not used by any end-user devices. This isolates the management traffic from regular user traffic.
 
 ---
@@ -1037,7 +1040,9 @@ These recommendations are part of the "best practices" for Layer 2 security and 
 ### **3. Manual Pruning vs. Automatic Pruning**
 
 - **Expansion:** By default, a trunk link carries traffic for **all** VLANs in the network. "Pruning" is the process of removing unnecessary VLAN traffic from a trunk link.
+
 - **The Problem with Automatic:** VTP (VLAN Trunking Protocol) pruning is automatic but can be unpredictable. If a switch miscommunicates, it might accidentally prune a VLAN that is actually needed, causing a network outage.
+
 - **The Manual Advantage:** Using the command `switchport trunk allowed vlan [ids]` is more secure. It ensures that only the specific VLANs you intend to allow can cross that link. This saves bandwidth and increases security by ensuring broadcast traffic from one building doesn't leak into another where it isn't needed.
 
 ---
@@ -1045,7 +1050,9 @@ These recommendations are part of the "best practices" for Layer 2 security and 
 ### **4. Disable Dynamic Trunking Protocol (DTP)**
 
 - **Expansion:** DTP is a proprietary protocol that allows two switches to "negotiate" whether they should be a trunk.
+
 - **The Security Risk:** If a port is left in "Dynamic Desirable" or "Dynamic Auto" mode, an attacker can use software on their laptop to "spoof" a switch. They can trick your switch into forming a trunk link with their laptop, giving the attacker access to **all VLANs** on your network.
+
 - **Best Practice:** Always hard-code your ports. Use `switchport mode trunk` and `switchport nonegotiate` on links between switches, and `switchport mode access` on user ports. This eliminates the chance of a "negotiation" being exploited by a hacker.
 
 ---
