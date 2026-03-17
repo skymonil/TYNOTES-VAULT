@@ -298,6 +298,8 @@ At the core layer, the focus is on high-speed switching, low latency, high avail
 
 Explain why hierarchical models outperform flat network designs.  QB
 
+![[IMG-20260317-075928.png]]
+
 In computer networking, a **flat network design** is essentially plugging every device, printer, and server into one massive, interconnected web of switches. While this works fine for a small office with 10 computers, it completely falls apart at an enterprise scale.
 
 A **hierarchical network design** (like the Cisco 3-Tier model) divides the network into discrete, logical layers based on their specific function. This structured approach massively outperforms a flat design for five primary reasons:
