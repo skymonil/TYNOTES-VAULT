@@ -65,20 +65,20 @@ The Prepare phase is the highest-level, strategic starting point. It establishes
 - **Goal:** To establish the business case, organizational strategy, and financial feasibility for the proposed network change.
 - **Focus:** **Why** and **What** are the big-picture goals?
 - **Key Activities:**
-    - **Business Requirements Analysis (BRD):** Identifying organizational goals (e.g., merging two company networks, supporting a massive cloud migration, reducing operational costs).
+    - **Business Requirements Analysis (BRD):** Understanding the organizational goals, current challenges, and the expected Return on Investment (ROI) for the network upgrade or deployment.
     - **High-Level Strategy:** Defining the broad technology direction and assessing the required skills and resources.
     - **Financial Scoping:** Performing an initial financial analysis (cost vs. expected ROI) to secure executive buy-in and funding.
 - **Output/Deliverables:** Project Charter, Business Requirements Document (BRD), initial financial analysis, and organizational readiness assessment.
 
 ## 2. 📝 Plan Phase
 
-The Plan phase translates the strategic vision from the Prepare phase into a detailed, managed project plan and a high-level technical scope.
+The **Plan** phase  is entirely focused on defining **why** the network change is necessary, **what** the business goals are, and **how** the project will be executed.
 
 - **Goal:** To develop the high-level network architecture, assess the existing environment, and create a comprehensive project plan.
 - **Focus:** **How** will the project be managed and what is the scope?
 - **Key Activities:**
     - **Current State Assessment:** Performing detailed site surveys and audits of the existing network infrastructure, applications, and operations.
-    - **High-Level Design (HLD):** Developing the target network architecture, defining the overall topology, and deciding on core services (e.g., "We will use SD-WAN," or "We need a 40G data center backbone").
+    - **High-Level Design (HLD):** Defining the high-level technical direction. This involves assessing new technologies (like SD-WAN, Cloud integration, IoT) and their fitness for the business needs..
     - **Project Management:** Creating a detailed project schedule, defining tasks, allocating personnel, and establishing risk management and communication protocols.
 - **Output/Deliverables:** Detailed Project Plan, High-Level Design (HLD), existing site survey documentation, and risk mitigation plan.
 
@@ -102,7 +102,7 @@ The Implement phase is the execution stage. It involves the physical and logical
 - **Goal:** To successfully install, configure, and integrate the network components into the production environment.
 - **Focus:** **Build** the network exactly as designed.
 - **Key Activities:**
-    - **Staging and Integration:** Pre-configuring and testing hardware and software in a controlled lab or staging environment before deployment.
+    - **Procurement and Staging:** Purchasing necessary hardware (routers, switches, firewalls) and setting them up in a lab environment for initial configuration and testing.
     - **Migration and Cutover:** Executing the detailed plan for integrating the new infrastructure, often requiring carefully managed change windows to minimize disruption to live services.
     - **Verification and Acceptance Testing:** Running the formal test plans created during the Design phase to ensure the network is functional, performs correctly, and meets the acceptance criteria.
     - **Documentation Handover:** Updating operational manuals and ensuring the engineering team transitions knowledge to the operations team.
@@ -138,7 +138,7 @@ The Optimize phase is the continuous feedback mechanism that ensures the network
 
 DESIGN METHODOLOGY for PBM QB
 
-3.STEPS OF IDENTIFY CUSTOMER REQUIREMENTS
+3.STEPS OF IDENTIFY CUSTOMER REQUIREMENTS QB
 
 ### **Step 1: Identify Network Applications and Services**
 
@@ -795,7 +795,9 @@ In modern networking, the **Cisco Three-Layer Hierarchical Model** is the gold s
 
 ### **1. The Access Layer**
 
-The Access Layer is the "front door" of the network. It is where end-user devices (PCs, printers, IP phones, and wireless access points) connect to the network.
+The Access Layer is the entry point of the network where end devices connect. This layer provides network access to devices such as computers, printers, IP phones, wireless access points, and IoT devices. Its primary function is to control how devices gain access to the network and what level of access they are allowed.
+
+At this layer, features such as VLAN assignment, port security, authentication (802.1X), Power over Ethernet (PoE), and basic Quality of Service (QoS) are implemented. The access layer is responsible for preventing unauthorized access and ensuring that user traffic enters the network efficiently and securely. Because it directly interacts with users, reliability and ease of management are important considerations at this layer.
 
 - **Primary Function:** To provide a connection point for end devices and handle local security.
 - **Key Features:** * **Port Security:** Limiting which MAC addresses can connect.
@@ -804,7 +806,9 @@ The Access Layer is the "front door" of the network. It is where end-user device
 
 ### **2. The Distribution Layer**
 
-The Distribution Layer acts as the "bridge" between the Access and Core layers. It aggregates the data from all the Access Layer switches and routes it toward the Core.
+The Distribution Layer acts as the boundary and control layer between the Access Layer and the Core Layer. Its main role is to aggregate traffic from multiple access layer switches and apply network policies before forwarding traffic to the core.
+
+This layer is responsible for routing between VLANs, policy enforcement, access control lists (ACLs), traffic filtering, QoS policies, and redundancy. It is also where routing decisions are made and where broadcast domains are controlled. By centralizing policy implementation, the distribution layer helps maintain consistency, improves security, and simplifies network management.
 
 - **Primary Function:** Policy-based connectivity and routing. It is the "smart" layer where data is filtered and managed.
 - **Key Features:** * **Inter-VLAN Routing:** Allowing different departments (VLANs) to talk to each other.
@@ -813,7 +817,9 @@ The Distribution Layer acts as the "bridge" between the Access and Core layers. 
 
 ### **3. The Core Layer**
 
-The Core Layer is the "backbone" of the network. Its only job is to move massive amounts of data as fast as possible between different parts of the campus or out to the internet.
+The Core Layer is the backbone of the network and is designed to provide fast, reliable, and highly available data transport across the entire network. Its primary purpose is to move large amounts of data quickly between distribution layer devices.
+
+At the core layer, the focus is on high-speed switching, low latency, high availability, and fault tolerance. Complex operations such as access control or packet filtering are avoided at this layer to ensure maximum performance. Core devices are typically high-capacity switches with redundant links and power supplies, ensuring minimal downtime and maximum network stability.
 
 - **Primary Function:** High-speed switching and transport.
 - **Key Features:** * **High Availability:** It must be designed with "zero downtime" in mind because a failure here affects the entire organization.
