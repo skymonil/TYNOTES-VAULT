@@ -2239,6 +2239,11 @@ The following table summarizes the key differences between IPv4 and IPv6 address
 
 ![[IMG-20260306-184506.png]]
 
+- ***Type of service:** Low Delay, High Throughput, Reliability (8 bits) 
+- **Total Length:** Length of header + Data (16 bits), which has a minimum value 20 bytes and the maximum is 65,535 bytes.
+- **Flags** 3 flags of 1 bit each : reserved bit (must be zero), do not fragment flag, more fragments flag (same order)
+- **Option:*** Optional information such as source route, record route. Used by the Network administrator to check whether a path is working or not
+
 ---
 
 ## 4.explain the various types of NATTing
