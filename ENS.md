@@ -56,6 +56,7 @@ The **Manage** phase covers the entire operational life of the network after dep
 
 2.PPDIOO  QB
 
+![[IMG-20260318-082043.png]]
 The PPDIOO (Prepare, Plan, Design, Implement, Operate, Optimize) Lifecycle is Cisco's comprehensive, structured methodology for designing, implementing, and managing network and infrastructure services. It provides a roadmap for engineers to ensure that network solutions meet business requirements and operate optimally throughout their entire lifespan.
 
 ## 1. 📋 Prepare Phase
@@ -581,7 +582,11 @@ Every device in a VLAN receives every single broadcast frame (like ARP requests)
 Out of the box, every port on a brand new switch belongs to the default VLAN (VLAN 1).
 
 - **The Practice:** Never use VLAN 1 for user data, management traffic, or the Native VLAN on trunk links. Create a dedicated "Management VLAN" (e.g., VLAN 99) strictly for accessing the switches via SSH, and set an unused, isolated VLAN as the "Native" untagged VLAN on all trunks.
-    
+
+
+The Risk:** Since every port is in VLAN 1 by default, an attacker can easily plug into any empty port and attempt to access the switch's management interface (Telnet/SSH/HTTP). This makes the switch vulnerable to "VLAN Hopping" and unauthorized access.
+
+- **The Fix:** You should create a unique, dedicated **Management VLAN** (e.g., VLAN 99) that is not used by any end-user devices. This isolates the management traffic from regular user traffic.
 - **The Value:** Leaving everything on VLAN 1 is a massive security risk. Moving management traffic to its own VLAN ensures that if a user's machine gets infected with malware, the malware cannot scan the local network and attempt to log into the core network infrastructure.
     
 
