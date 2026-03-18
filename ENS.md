@@ -2076,6 +2076,8 @@ Enterprises have certain servers that the public _must_ be able to access, such 
 
 By placing these public-facing servers in the DMZ, you isolate them. If a hacker breaches the web server in the DMZ, they are still trapped there and blocked from reaching the internal corporate network by another layer of security.
 
+![[IMG-20260318-053529.png]]
+
 ---
 
 ### DMZ Connectivity Types (Architectures)
@@ -2083,6 +2085,8 @@ By placing these public-facing servers in the DMZ, you isolate them. If a hacker
 To build a DMZ, network engineers generally use one of two primary firewall architectures.
 
 ### 1. Single Firewall Architecture (The "Three-Legged" Model)
+
+![[IMG-20260318-053706.png]]
 
 In this setup, a single enterprise firewall is used to manage all traffic. The firewall must have at least three physical or virtual network interfaces.
 
@@ -2098,6 +2102,8 @@ In this setup, a single enterprise firewall is used to manage all traffic. The f
     
 
 ### 2. Dual Firewall Architecture (The "Back-to-Back" Model)
+
+![[IMG-20260318-053853.png]]
 
 This is the gold standard for enterprise security. It uses two completely separate firewalls to create a highly secure "sandwich" around the DMZ servers.
 
@@ -2153,6 +2159,7 @@ Regardless of size, every enterprise branch requires four fundamental blocks to 
 To make deployments easily repeatable, enterprises classify branches into specific "profiles" based on size and user count.
 
 #### The Small Branch (SOHO / Retail)
+![[IMG-20260318-055606.png]]
 
 - **Users:** 1 to 50
     
